@@ -1,0 +1,28 @@
+[mysqld]
+# mysql启动用户
+user=mysql
+# 服务字符集
+character-set-server=utf8
+# 端口
+port=3316
+# 用于通讯的套接字，由于是一台机多实例，所以区分开(可以改成自己的目录)
+socket=/Users/yc/mysql/3316/mysql.sock
+# mysql安装目录(可以改成自己的目录)
+basedir=/usr/local/Cellar/mysql@5.7/5.7.32
+# 数据存放目录(可以改成自己的目录)
+datadir=/Users/yc/mysql/3316/data
+# master节点唯一标识
+server-id=1
+gtid_mode=ON
+enforce-gtid-consistency=true
+master-info-repository=TABLE
+relay-log-info-repository=TABLE
+# bin-log前缀
+log-bin=master-bin
+# bin-log-index前缀
+log-bin-index=master-bin.index
+binlog_format=ROW
+
+[mysqld_safe]
+# 启动错误日志输出地址(可以改成自己的目录)
+log-error=/Users/yc/mysql/3316/logs/err.log
